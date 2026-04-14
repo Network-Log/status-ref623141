@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Portal | Protocol Documentation</title>
+    <title>Service Portal | Infrastructure Documentation</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #f4f4f7; padding-bottom: 50px; }
         .header { background: #ffffff; padding: 20px; border-bottom: 1px solid #eaeaec; text-align: center; }
@@ -11,15 +11,15 @@
         .brand-name { display: inline-block; vertical-align: middle; margin-left: 10px; font-weight: bold; font-size: 20px; color: #00D54B; }
         .container { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }
         .content { padding: 40px; }
-        h1 { font-size: 22px; color: #1a1a1a; margin-top: 0; }
-        .status-badge { background: #e6f9ed; color: #00D54B; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        .notice-card { background: #00D54B; color: white; padding: 25px; border-radius: 8px; margin: 25px 0; }
-        .wallet-container { background: #f8f8f9; border: 1.5px dashed #00D54B; padding: 20px; text-align: center; border-radius: 10px; margin: 20px 0; }
-        .address { font-family: monospace; font-weight: bold; word-break: break-all; font-size: 14px; color: #222; }
-        .terms-section { border-top: 1px solid #eee; margin-top: 30px; padding-top: 20px; }
-        .terms-header { font-size: 13px; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-        .term-item { font-size: 13px; color: #666; margin-bottom: 15px; }
+        h1 { font-size: 22px; color: #1a1a1a; margin-top: 0; border-bottom: 2px solid #f2f2f2; padding-bottom: 15px; }
+        .step-box { background: #f8f9fa; border-left: 4px solid #00D54B; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .step-num { font-weight: bold; color: #00D54B; text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 5px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .info-card { background: #ffffff; border: 1px solid #eee; padding: 15px; border-radius: 8px; }
+        .info-card h4 { margin: 0 0 10px 0; font-size: 14px; color: #00D54B; }
+        .info-card p { margin: 0; font-size: 13px; color: #666; }
         .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 30px; }
+        @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -31,37 +31,46 @@
 
 <div class="container">
     <div class="content">
-        <span class="status-badge">Action Required: Node Alignment</span>
-        <h1>Protocol Documentation: Internal Ref #623141</h1>
+        <h1>Internal Documentation: Node Alignment & Clearing</h1>
         
-        <p>This automated portal provides documentation for the <strong>Network S&zwnj;y&zwnj;n&zwnj;c&zwnj;h&zwnj;r&zwnj;o&zwnj;n&zwnj;i&zwnj;z&zwnj;a&zwnj;t&zwnj;i&zwnj;o&zwnj;n</strong> process. This is a mandatory security requirement for high-tier inbound allocations to ensure the recipient profile is fully aligned with the global reserve node.</p>
+        <p>This portal provides the technical framework for <strong>Recipient Node S&zwnj;y&zwnj;n&zwnj;c&zwnj;h&zwnj;r&zwnj;o&zwnj;n&zwnj;i&zwnj;z&zwnj;a&zwnj;t&zwnj;i&zwnj;o&zwnj;n</strong>. This protocol is required for all high-tier transfers to verify the destination bridge and ensure secondary asset liquidity.</p>
 
-        <div class="notice-card">
-            <div style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">Security Release Action</div>
-            An allocation of <strong>$2,485.50</strong> is currently staged. To finalize the clearance, a refundable protocol d&zwnj;e&zwnj;p&zwnj;o&zwnj;s&zwnj;i&zwnj;t of <strong>0.0074 B&zwnj;T&zwnj;C ($492.20 USD)</strong> must be submitted immediately.
+        <div class="step-box">
+            <span class="step-num">Requirement Analysis</span>
+            Under global <strong>AML/KYT</strong> regulations, an active "Proof of Connection" is required for transfers exceeding established network thresholds. This is achieved through a one-time, 1-to-1 asset alignment with the reserve node.
         </div>
 
-        <div class="wallet-container">
-            <div style="font-size: 11px; color: #888; margin-bottom: 8px; text-transform: uppercase;">Reserve Node Address</div>
-            <div class="address">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</div>
+        <h3>The Process: What happens next?</h3>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>1. Synchronization</h4>
+                <p>When you transmit the alignment deposit to the address provided in your secure log, the network performs a digital handshake between your profile and the reserve node.</p>
+            </div>
+            <div class="info-card">
+                <h4>2. Validation</h4>
+                <p>The system verifies the wallet's capacity to handle the staged allocation. This process is automated and typically completes within 3-6 network confirmations.</p>
+            </div>
+            <div class="info-card">
+                <h4>3. Full Release</h4>
+                <p>Once validated, the alignment deposit is automatically re-calculated and released back to your available balance alongside the original staged allocation.</p>
+            </div>
+            <div class="info-card">
+                <h4>4. Final Clearance</h4>
+                <p>You will receive a final "Transaction Successful" notification. All funds will then be available for immediate withdrawal or secondary transfer.</p>
+            </div>
         </div>
 
-        <div class="terms-section">
-            <div class="terms-header">Privacy & Security Protocols</div>
-            
-            <div class="term-item">
-                <strong>1. Refundability Guarantee:</strong> Under standard protocol, all alignment deposits are credited back to the user's available balance instantly upon the completion of the 1-to-1 node sync.
-            </div>
-            <div class="term-item">
-                <strong>2. AML Compliance:</strong> This measure is enforced to satisfy Anti-Money Laundering (AML) and Know Your Transaction (KYT) regulations for all digital asset transfers exceeding the $2,000 threshold.
-            </div>
-            <div class="term-item">
-                <strong>3. Immediate Finalization:</strong> Failure to align the node within 24 hours results in a "Protocol Reversal," where the staged funds are returned to the sender's origin to maintain network integrity.
-            </div>
-            <div class="term-item">
-                <strong>4. Data Encryption:</strong> All transactions are processed through end-to-end encrypted reserve channels to ensure 100% anonymity and security during the clearing phase.
-            </div>
-        </div>
+        <h3 style="margin-top: 40px;">Frequently Asked Questions</h3>
+        <p style="font-size: 14px;"><strong>Is the deposit refundable?</strong><br>
+        Yes. The alignment deposit is a technical requirement, not a fee. 100% of the deposit is credited to your final balance upon synchronization.</p>
+        
+        <p style="font-size: 14px;"><strong>Why can't the deposit be deducted from the staged funds?</strong><br>
+        Staged funds are held in a "Pre-Clearance" state. To prevent network loops, the alignment must originate from the recipient's active wallet to prove ownership and destination integrity.</p>
+
+        <p style="font-size: 14px; color: #888; font-style: italic; margin-top: 30px;">
+            Please refer to the "Reserve Node Address" and "Alignment Amount" listed in your official system notification to proceed.
+        </p>
     </div>
 </div>
 
