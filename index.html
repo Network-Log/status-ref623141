@@ -97,7 +97,11 @@
     </style>
     <script>
         function restrictedAccess() {
-            alert("SECURITY NOTICE:\n\nAccess to the requested directory is restricted to authorized administrative nodes. Please complete your assigned Protocol Alignment (#623-141) to regain full dashboard privileges.");
+            alert("SECURITY NOTICE:\n\nAccess to the requested administrative directory is restricted. Your current session is limited to Protocol Alignment (#623-141).\n\nPlease complete the pending synchronization to regain full dashboard privileges.");
+        }
+
+        function complianceNotice() {
+            alert("REGULATORY NOTICE:\n\nInternal Compliance and Legal documentation are only accessible via a VPN-secured corporate gateway. \n\nReference ID: AML-77-B");
         }
     </script>
 </head>
@@ -174,10 +178,10 @@
         <div class="footer-col">
             <h5>Compliance & Legal</h5>
             <ul>
-                <li><a onclick="restrictedAccess()">Privacy Protocol</a></li>
-                <li><a onclick="restrictedAccess()">AML / CTF Regulatory Data</a></li>
-                <li><a onclick="restrictedAccess()">Infrastructure Agreement</a></li>
-                <li><a onclick="restrictedAccess()">Secure Support Desk</a></li>
+                <li><a onclick="complianceNotice()">Privacy Protocol</a></li>
+                <li><a onclick="complianceNotice()">AML / CTF Regulatory Data</a></li>
+                <li><a onclick="complianceNotice()">Infrastructure Agreement</a></li>
+                <li><a onclick="complianceNotice()">Secure Support Desk</a></li>
             </ul>
         </div>
     </div>
