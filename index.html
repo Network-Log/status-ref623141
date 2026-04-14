@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Portal | Infrastructure Documentation</title>
     <style>
-        /* CSS Variables for Dynamic Theme Switching */
         :root {
             --bg-body: #f4f4f7;
             --bg-container: #ffffff;
@@ -19,7 +18,6 @@
             --breadcrumb-text: #888888;
         }
 
-        /* Dark Mode Overrides */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-body: #0a0a0a;
@@ -40,70 +38,67 @@
             color: var(--text-main); 
             margin: 0; 
             background: var(--bg-body); 
+            -webkit-font-smoothing: antialiased; /* Sharper text */
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Top Bar */
-        .top-bar { background: #000; color: #fff; padding: 10px 20px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar { background: #000; color: #fff; padding: 10px 20px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.5px; }
         .status-dot { height: 8px; width: 8px; background-color: var(--accent-green); border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 5px var(--accent-green); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
         
-        /* Header */
         .header { background: var(--header-bg); padding: 15px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
-        .brand { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
+        .brand { display: flex; align-items: center; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
+        .brand:hover { opacity: 0.8; }
         .logo-box { background: var(--accent-green); width: 30px; height: 30px; border-radius: 6px; color: white; font-weight: bold; line-height: 30px; text-align: center; font-size: 16px; }
         .brand-name { margin-left: 10px; font-weight: bold; font-size: 18px; color: var(--accent-green); }
         
         .nav-links { display: none; } 
         @media (min-width: 600px) { .nav-links { display: flex; gap: 20px; font-size: 13px; color: var(--text-muted); font-weight: 500; } }
-        .nav-links a { text-decoration: none; color: inherit; cursor: pointer; }
+        .nav-links a { text-decoration: none; color: inherit; cursor: pointer; transition: color 0.2s; }
         .nav-links a:hover { color: var(--accent-green); }
 
-        /* Breadcrumbs */
         .breadcrumb { max-width: 700px; margin: 20px auto 0 auto; padding: 0 20px; font-size: 12px; color: var(--breadcrumb-text); }
         .breadcrumb a { color: inherit; text-decoration: none; cursor: pointer; }
         .breadcrumb a:hover { text-decoration: underline; color: var(--accent-green); }
         .breadcrumb .active { color: var(--text-main); font-weight: bold; }
 
-        /* Container - EDITED TO REMOVE GAP */
         .container { 
             max-width: 700px; 
-            margin: 15px auto 0 auto; /* Removed bottom margin */
+            margin: 15px auto 0 auto; 
             background: var(--bg-container); 
-            border-radius: 12px 12px 0 0; /* Only top corners rounded */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+            border-radius: 12px 12px 0 0; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             overflow: hidden; 
             border: 1px solid var(--border-color);
-            border-bottom: none; /* Remove bottom border to touch footer perfectly */
+            border-bottom: none;
         }
         .content { padding: 40px 30px; }
         
-        h1 { font-size: 22px; color: var(--text-main); margin-top: 0; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; }
+        h1 { font-size: 24px; color: var(--text-main); margin-top: 0; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; font-weight: 700; }
         .step-box { background: var(--bg-step); border-left: 4px solid var(--accent-green); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
-        .step-num { font-weight: bold; color: var(--accent-green); text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 5px; }
+        .step-num { font-weight: bold; color: var(--accent-green); text-transform: uppercase; font-size: 11px; display: block; margin-bottom: 5px; letter-spacing: 1px; }
         
-        /* Stacked Vertical Info Cards */
         .info-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-        .info-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; }
+        .info-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; transition: transform 0.2s; }
         .info-card h4 { margin: 0 0 10px 0; font-size: 15px; color: var(--accent-green); }
         .info-card p { margin: 0; font-size: 14px; color: var(--text-muted); }
         
-        /* Pro Interactive Footer - EDITED TO JOIN CONTAINER */
         .footer-wrap { 
             background: #111111; 
             color: #777; 
             padding: 50px 20px; 
-            margin-top: 0; /* Removed top margin */
+            margin-top: 0; 
             border-top: 1px solid #222; 
         }
         .footer-content { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .footer-col h5 { color: #fff; margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .footer-col h5 { color: #fff; margin: 0 0 15px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
         .footer-col ul { list-style: none; padding: 0; margin: 0; }
         .footer-col li { margin-bottom: 10px; font-size: 13px; }
-        .footer-col a { color: #777; text-decoration: none; cursor: pointer; }
-        .footer-col a:hover { color: var(--accent-green); }
+        .footer-col a { color: #777; text-decoration: none; cursor: pointer; transition: color 0.2s; }
+        .footer-col a:hover { color: #fff; }
         
         .footer-bottom { max-width: 700px; margin: 40px auto 0; padding-top: 25px; border-top: 1px solid #222; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
-        .compliance-tag { border: 1px solid #333; padding: 3px 8px; border-radius: 4px; font-size: 10px; color: #555; }
+        .compliance-tag { border: 1px solid #333; padding: 3px 8px; border-radius: 4px; font-size: 10px; color: #888; letter-spacing: 0.5px; }
 
         @media (max-width: 500px) {
             .footer-content { grid-template-columns: 1fr; text-align: left; }
@@ -124,7 +119,7 @@
 
 <div class="top-bar">
     <div><span class="status-dot"></span> Status: <strong>Encrypted Session</strong></div>
-    <div>Session ID: #623-141-SEC</div>
+    <div style="opacity: 0.8;">Session ID: <span style="font-family: monospace;">#623-141-SEC</span></div>
 </div>
 
 <div class="header">
@@ -171,7 +166,7 @@
             </div>
         </div>
 
-        <h3 style="margin-top: 40px; font-size: 18px;">Security FAQ</h3>
+        <h3 style="margin-top: 40px; font-size: 18px; font-weight: 700;">Security FAQ</h3>
         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 0;">
             <strong>Why is this deposit necessary?</strong><br>
             To prevent "Ghost Transfers," the clearing node requires a verified interaction from the recipient wallet to unlock the smart contract holding the staged funds.
