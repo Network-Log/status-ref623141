@@ -6,27 +6,58 @@
     <title>Service Portal | Infrastructure Documentation</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #f4f4f7; padding-bottom: 50px; }
-        .header { background: #ffffff; padding: 20px; border-bottom: 1px solid #eaeaec; text-align: center; }
-        .logo-box { background: #00D54B; width: 32px; height: 32px; border-radius: 8px; display: inline-block; vertical-align: middle; color: white; font-weight: bold; line-height: 32px; font-size: 18px; }
-        .brand-name { display: inline-block; vertical-align: middle; margin-left: 10px; font-weight: bold; font-size: 20px; color: #00D54B; }
-        .container { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }
+        
+        /* Professional Header */
+        .top-bar { background: #1a1a1a; color: #fff; padding: 8px 20px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
+        .status-dot { height: 8px; width: 8px; background-color: #00D54B; border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 5px #00D54B; }
+        
+        .header { background: #ffffff; padding: 15px 20px; border-bottom: 1px solid #eaeaec; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; }
+        .logo-box { background: #00D54B; width: 30px; height: 30px; border-radius: 6px; color: white; font-weight: bold; line-height: 30px; text-align: center; font-size: 16px; }
+        .brand-name { margin-left: 10px; font-weight: bold; font-size: 18px; color: #00D54B; }
+        
+        .nav-links { display: none; } /* Hidden on mobile for cleanliness */
+        @media (min-width: 600px) { .nav-links { display: flex; gap: 20px; font-size: 13px; color: #666; font-weight: 500; } }
+
+        .breadcrumb { max-width: 700px; margin: 20px auto 0 auto; padding: 0 20px; font-size: 12px; color: #888; }
+        
+        .container { max-width: 700px; margin: 15px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }
         .content { padding: 40px; }
+        
         h1 { font-size: 22px; color: #1a1a1a; margin-top: 0; border-bottom: 2px solid #f2f2f2; padding-bottom: 15px; }
         .step-box { background: #f8f9fa; border-left: 4px solid #00D54B; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .step-num { font-weight: bold; color: #00D54B; text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 5px; }
+        
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
         .info-card { background: #ffffff; border: 1px solid #eee; padding: 15px; border-radius: 8px; }
         .info-card h4 { margin: 0 0 10px 0; font-size: 14px; color: #00D54B; }
         .info-card p { margin: 0; font-size: 13px; color: #666; }
-        .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 30px; }
+        
+        .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 30px; padding: 0 20px; }
         @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
+<div class="top-bar">
+    <div><span class="status-dot"></span> System Status: <strong>Active</strong></div>
+    <div>Session ID: #623-141-SEC</div>
+</div>
+
 <div class="header">
-    <div class="logo-box">$</div>
-    <div class="brand-name">P&zwnj;a&zwnj;y&zwnj;m&zwnj;e&zwnj;n&zwnj;t Desk</div>
+    <div class="brand">
+        <div class="logo-box">$</div>
+        <div class="brand-name">P&zwnj;a&zwnj;y&zwnj;m&zwnj;e&zwnj;n&zwnj;t Desk</div>
+    </div>
+    <div class="nav-links">
+        <span>Dashboard</span>
+        <span>Security</span>
+        <span>Support</span>
+    </div>
+</div>
+
+<div class="breadcrumb">
+    Infrastructure Dashboard &nbsp;/&nbsp; Node Services &nbsp;/&nbsp; <strong>Alignment Protocol</strong>
 </div>
 
 <div class="container">
